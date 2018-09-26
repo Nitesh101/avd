@@ -1,6 +1,6 @@
 import os,subprocess
 base = "/var/lib/jenkins/workspace/"
-base_file = os.path.join(base,"test/")
+base_file = os.path.join(base,"test/sample/")
 for test in os.listdir(base_file):
 	os.chdir(base_file)
 	if test.endswith(".py"):
