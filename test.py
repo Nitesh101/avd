@@ -1,6 +1,9 @@
-def length_string(num):
-	total = 0
-	for i in num:
-		total += 1
-	return total
-print length_string('nitesh')
+import os,subprocess
+base = "/var/lib/jenkins/workspace/"
+base_file = os.path.join(base,"test/")
+for test in os.listdir(base_file):
+	os.chdir(base_file)
+	if test.endswith(".py"):
+		process = subprocess.Popen('python {0}'.format(test), shell=True)
+		status = process.communicate()
+
